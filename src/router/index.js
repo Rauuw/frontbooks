@@ -4,6 +4,7 @@ import BookForm from '../views/CreateBook.vue'
 import Index from '../views/IndexBooks.vue'
 import Edit from '../views/EditBook.vue'
 
+
 const routes = [
   {
     path: '/',

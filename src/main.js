@@ -5,6 +5,8 @@ import store from './store'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap';
 
+
+
 createApp(App) // Monta la aplicación principal
   .use(store)
   .use(router)
