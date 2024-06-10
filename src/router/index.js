@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import BookForm from '../views/CreateBook.vue'
 import Index from '../views/IndexBooks.vue'
 import Edit from '../views/EditBook.vue'
+import Dashboard from '../views/DashboardView.vue'
 
 
 const routes = [
@@ -33,6 +34,11 @@ const routes = [
     path: '/edit_book/:id',
     name: 'edit_book',
     component: Edit
+  },
+  {
+    path: '/dashboard',
+    name: 'dashboard',
+    component: Dashboard
   }
 ]
 

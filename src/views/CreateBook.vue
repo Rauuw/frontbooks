@@ -114,7 +114,7 @@
     },
     methods: {
       handleSubmit() {
-        fetch('http://localhost:8080/books', {
+        fetch('https://microservicebooks-production.up.railway.app/books', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'

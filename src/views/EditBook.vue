@@ -102,7 +102,7 @@
     },
     methods: {
       loadBook(id) {
-        fetch(`http://localhost:8080/books/${id}`)
+        fetch(`https://microservicebooks-production.up.railway.app/books/${id}`)
           .then(response => response.json())
           .then(data => {
             this.book = data;
@@ -112,7 +112,7 @@
           });
       },
       handleSubmit() {
-        fetch(`http://localhost:8080/books/${this.book.id}`, {
+        fetch(`https://microservicebooks-production.up.railway.app/books/${this.book.id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'

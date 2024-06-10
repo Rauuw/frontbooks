@@ -41,7 +41,7 @@ export default {
     },
     methods: {
         fetchBooks() {
-            fetch('http://localhost:8080/books/allBooks')
+            fetch('https://microservicebooks-production.up.railway.app/books/allBooks')
                 .then(response => response.json())
                 .then(data => {
                     this.books = data;
@@ -52,7 +52,7 @@ export default {
         },
         deleteBook(bookId) {
             if (confirm(`¿Estás seguro de que deseas eliminar el libro con el ID ${bookId}?`)) {
-                fetch(`http://localhost:8080/books/${bookId}`, {
+                fetch(`https://microservicebooks-production.up.railway.app/books/${bookId}`, {
                     method: 'DELETE'
                 })
                     .then(response => {

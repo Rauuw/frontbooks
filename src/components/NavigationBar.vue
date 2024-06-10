@@ -25,6 +25,9 @@
               <router-link class="nav-link" active-class="active" to="/create_book">Crear Libro</router-link>
             </li>
             <li class="nav-item">
+              <router-link class="nav-link" active-class="active" to="/dashboard">Dashboard</router-link>
+            </li>
+            <li class="nav-item">
               <router-link class="nav-link" active-class="active" to="/about">Acerca de</router-link>
             </li>
           </ul>
