@@ -19,6 +19,7 @@
                     <td>{{ book.ano }}</td>
                     <td>
                         <router-link :to="{ name: 'edit_book', params: { id: book.id } }" class="btn btn-primary">Editar</router-link>
+                        <router-link :to="{ name: 'view_book', params: { id: book.id } }" class="btn btn-secondary">Ver</router-link>
                         <button @click="deleteBook(book.id)" class="btn btn-danger">Eliminar</button>
                     </td>
                 </tr>

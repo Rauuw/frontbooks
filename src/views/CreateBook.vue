@@ -90,6 +90,16 @@
             placeholder="Ingrese el idioma del libro"
           />
         </div>
+
+        <div class="mb-3">
+          <label for="input-texto" class="form-label">Texto</label>
+          <textarea
+            class="form-control"
+            id="input-texto"
+            v-model="book.texto"
+            placeholder="Ingrese el texto del libro"
+          ></textarea>
+        </div>
   
         <button type="submit" class="btn btn-primary">Guardar</button>
       </form>
@@ -108,7 +118,8 @@
           editorial: '',
           descripcion: '',
           paginas: '',
-          idioma: ''
+          idioma: '',
+          texto: ''
         }
       };
     },

@@ -4,6 +4,7 @@ import BookForm from '../views/CreateBook.vue'
 import Index from '../views/IndexBooks.vue'
 import Edit from '../views/EditBook.vue'
 import Dashboard from '../views/DashboardView.vue'
+import ViewBook from '../views/ViewBook.vue'
 
 
 const routes = [
@@ -39,6 +40,11 @@ const routes = [
     path: '/dashboard',
     name: 'dashboard',
     component: Dashboard
+  },
+  {
+    path: '/view_book/:id',
+    name: 'view_book',
+    component: ViewBook
   }
 ]
 
