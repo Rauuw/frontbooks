@@ -21,7 +21,7 @@
     methods: {
       fetchYearPlot() {
         if (this.startYear && this.endYear) {
-          this.yearPlotImageUrl = `http://localhost:8000/books/year/plot?start_year=${this.startYear}&end_year=${this.endYear}`;
+          this.yearPlotImageUrl = `https://dashboardpython-production-4851.up.railway.app/books/year/plot?start_year=${this.startYear}&end_year=${this.endYear}`;
         }
       }
     }

@@ -135,7 +135,7 @@
         .then(response => {
           if (response.ok) {
             alert('Libro creado exitosamente!');
-            this.$router.push('/');
+            this.$router.push('home');
           } else {
             alert('Error al crear el libro');
           }
@@ -151,8 +151,17 @@
   
   <style scoped>
   .container {
-    max-width: 600px;
-    margin: 20px auto;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    /* Establecer la imagen de fondo */
+    background-image: url('https://colexiodivinapastora.com/wp-content/uploads/sites/23/2022/05/Fondo-de-libros.jpg');
+    background-size: cover;
+    background-position: center;
   }
   </style>
   

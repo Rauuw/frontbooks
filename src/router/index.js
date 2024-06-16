@@ -5,46 +5,99 @@ import Index from '../views/IndexBooks.vue'
 import Edit from '../views/EditBook.vue'
 import Dashboard from '../views/DashboardView.vue'
 import ViewBook from '../views/ViewBook.vue'
+import Login from '../views/LoginView.vue'
+import Register from '../views/RegisterView.vue'
+import OnlyViewBook from '../views/OnlyViewBook.vue'
 
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView
+    redirect: '/login'
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  },
+    path: '/home',
+    name: 'home',
+    component: HomeView,
+    meta: {
+      requiresAuth: true
+    }
+  }
+  // ,
+  // {
+  //   path: '/about',
+  //   name: 'about',
+  //   component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+  // }
+  ,
   {
     path: '/create_book',
     name: 'create_book',
-    component: BookForm
+    component: BookForm,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/index_books',
     name: 'books',
-    component: Index
+    component: Index,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/edit_book/:id',
     name: 'edit_book',
-    component: Edit
+    component: Edit,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/dashboard',
     name: 'dashboard',
-    component: Dashboard
+    component: Dashboard,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/view_book/:id',
     name: 'view_book',
-    component: ViewBook
+    component: ViewBook,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: Login,
+    meta: {
+      hideNavBar: true
+    }
+  },
+  {
+    path: '/register',
+    name: 'register',
+    component: Register,
+    meta: {
+      hideNavBar: true
+    }
+  },
+  {
+    path: '/:catchAll(.*)',
+    redirect: '/login'
+  },
+  {
+    path: '/only_view_book/:id',
+    name: 'only_view_book',
+    component: OnlyViewBook,
+    meta: {
+      hideNavBar: true,
+      requiresAuth: false
+    }
   }
 ]
 
@@ -52,5 +105,15 @@ const router = createRouter({
   history: createWebHistory(),
   routes
 })
+
+router.beforeEach((to, from, next) => {
+  const isAuthenticated = !!localStorage.getItem('token'); // Verifica si hay un token
+
+  if (to.meta.requiresAuth && !isAuthenticated) {
+    next({ name: 'login' }); // Redirige al login si no está autenticado
+  } else {
+    next(); // Continúa con la navegación si está autenticado o la ruta no requiere autenticación
+  }
+});
 
 export default router

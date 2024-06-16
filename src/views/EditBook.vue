@@ -140,6 +140,10 @@
   .container {
     max-width: 800px;
     margin: 20px auto;
+
+    background-image: url('https://colexiodivinapastora.com/wp-content/uploads/sites/23/2022/05/Fondo-de-libros.jpg');
+    background-size: cover;
+    background-position: center;
   }
   </style>
   

@@ -9,7 +9,7 @@
   export default {
     data() {
       return {
-        ratingsImageUrl: "http://localhost:8000/books/ratings/plot" // Ajusta la URL si es necesario
+        ratingsImageUrl: "https://dashboardpython-production-4851.up.railway.app/books/ratings/plot" // Ajusta la URL si es necesario
       };
     }
   };
