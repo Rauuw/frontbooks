@@ -94,7 +94,7 @@
   
           if (response.ok) {
             // Almacenar el token en localStorage
-            localStorage.setItem('token', data.token);
+            sessionStorage.setItem('token', data.token);
             // Redirigir a la página de inicio
             this.$router.push({ name: 'home' });
           } else {

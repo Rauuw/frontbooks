@@ -48,7 +48,7 @@ export default {
                     const token = data.token;
 
                     // Almacenar el token en el almacenamiento local o en algún otro lugar seguro
-                    localStorage.setItem('token', token);
+                    sessionStorage.setItem('token', token);
 
                     // Redirigir a la página de inicio
                     this.$router.push({ name: 'home' });
