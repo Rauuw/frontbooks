@@ -20,9 +20,9 @@
           <li class="nav-item">
             <router-link class="nav-link" active-class="active" to="/dashboard">Dashboard</router-link>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <router-link class="nav-link" active-class="active" to="/about">Acerca de</router-link>
-          </li>
+          </li> -->
           <li class="nav-item">
             <button @click="logout" class="btn btn-link nav-link">Logout</button>
           </li>
